@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+g_p_emp.tarea,g_p_emp.tarea,model_g_p_emp_tarea,base.group_user,1,1,1,1
+acceso_gestionar_proyectos_emp_tarea.sprint,gestionar_proyectos_emp.sprint,model_gestionar_proyectos_emp_sprint,base.group_user,1,1,1,1
+acceso_gestionar_proyectos_emp_tarea.tecno,gestionar_proyectos_emp.tecno,model_gestionar_proyectos_emp_tecno,base.group_user,1,1,1,1
+
+acceso_gestionar_proyectos_emp_tarea.proyecto,gestionar_proyectos_emp.proyecto,model_gestionar_proyectos_emp_proyecto,base.group_user,1,1,1,1
+acceso_gestionar_proyectos_emp_tarea.historias,gestionar_proyectos_emp.historias,model_gestionar_proyectos_emp_historias,base.group_user,1,1,1,1
+
+g_p_emp.bug,g_p_emp.bug,model_g_p_emp_bug,base.group_user,1,1,1,1
+acceso_g_p_emp.mejora,g_p_emp.mejora,model_g_p_emp_mejora,base.group_user,1,1,1,1
+
+

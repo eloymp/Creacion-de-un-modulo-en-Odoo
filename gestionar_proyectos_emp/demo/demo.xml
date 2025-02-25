@@ -1,0 +1,11 @@
+<odoo>
+  <data>
+
+    <record id="DesarrolladorDemo" model="res.partner">
+      <field name="name">Pablo Martinez</field>
+      <field name="codigo_acceso">12345677E</field>
+      <field name="es_desarrollador">True</field>
+    </record>
+
+  </data>
+</odoo>

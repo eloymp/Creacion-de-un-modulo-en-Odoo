@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.formulario_historias">
+            <field name="name">gestionar_proyectos_emp formulario historias</field>
+            <field name="model">gestionar_proyectos_emp.historias</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="proyecto"/>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="tareas"/>
+                        <field name="tecnologias_usadas"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="gestionar_proyectos_emp.accion_ventana_historias">
+            <field name="name">gestionar historia</field>
+            <field name="res_model">gestionar_proyectos_emp.historias</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Historia" id="gestionar_proyectos_emp.menu_1_lista_historia" parent="gestionar_proyectos_emp.menu_1" action="gestionar_proyectos_emp.accion_ventana_historias"/>
+
+    </data>
+</odoo>

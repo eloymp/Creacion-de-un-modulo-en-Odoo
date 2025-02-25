@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.lista_tareas">
+            <!--Este id es el mismo del modelo que hemos creado, hasta el punto-->
+            <field name="name">gestionarProyectos_emp list</field>
+            <field name="model">g_p_emp.tarea</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.formulario_tareas">
+            <field name="name">gestionar_proyectos_emp formulario tarea</field>
+            <field name="model">g_p_emp.tarea</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="fecha_definicion"/>
+                        <field name="proyecto"/>
+                        <field name="historia"/>
+                        <field name="codigo"/>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin"/>
+                        <field name="esta_pausada"/>
+                        <field name="sprint"/>
+                        <field 
+                            name="desarrolladores" 
+                            domain="[('es_desarrollador','=',True)]" 
+                            context="{'form_view_ref':'gestionar_proyectos_emp.formulario_desarroladores_partner','default_is_dev':True}"
+                            widget="many2many_tags"
+                            ></field>
+                        <field name="tecnologia"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="gestionar_proyectos_emp.accion_ventana_tareas">
+            <field name="name">gestionarProyectos ventana tareas</field>
+            <field name="res_model">g_p_emp.tarea</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Tareas" id="gestionar_proyectos_emp.menu_1_lista_tareas" parent="gestionar_proyectos_emp.menu_1" action="gestionar_proyectos_emp.accion_ventana_tareas"/>
+
+    </data>
+</odoo>

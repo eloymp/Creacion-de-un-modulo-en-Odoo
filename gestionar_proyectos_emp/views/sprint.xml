@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.lista_sprint">
+            <field name="name">gestionar_proyectos__emp.lista_sprints</field>
+            <field name="model">gestionar_proyectos_emp.sprint</field>
+            <field name="arch" type="xml">
+                <tree decoration-info ="activo == True" decoration-warning="duracion&lt;15">
+                    <field name="nombre"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="activo" invisible="True"/>
+                    <field name="duracion" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.formulario_sprint">
+            <field name="name">gestionar_proyectos_emp formulario sprint</field>
+            <field name="model">gestionar_proyectos_emp.sprint</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="proyecto"/>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="duracion"/>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin"/>
+                        <field name="tarea"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="gestionar_proyectos_emp.accion_ventana_sprint">
+            <field name="name">gestionar sprints</field>
+            <field name="res_model">gestionar_proyectos_emp.sprint</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Sprints" id="gestionar_proyectos_emp.menu_1_lista_sprint" parent="gestionar_proyectos_emp.menu_1" action="gestionar_proyectos_emp.accion_ventana_sprint"/>
+
+    </data>
+</odoo>

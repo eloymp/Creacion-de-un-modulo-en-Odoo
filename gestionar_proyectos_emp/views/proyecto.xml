@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.formulario_proyecto">
+            <field name="name">gestionar_proyectos_emp formulario proyecto</field>
+            <field name="model">gestionar_proyectos_emp.proyecto</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="historias"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="gestionar_proyectos_emp.accion_ventana_proyecto">
+            <field name="name">gestionar proyecto</field>
+            <field name="res_model">gestionar_proyectos_emp.proyecto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Proyecto" id="gestionar_proyectos_emp.menu_1_lista_proyecto" parent="gestionar_proyectos_emp.menu_1" action="gestionar_proyectos_emp.accion_ventana_proyecto"/>
+
+
+    </data>
+</odoo>

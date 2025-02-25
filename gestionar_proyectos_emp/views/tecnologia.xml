@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="gestionar_proyectos_emp.formulario_tecnologias">
+            <field name="name">gestionar_proyectos_emp formulario tecnologias</field>
+            <field name="model">gestionar_proyectos_emp.tecno</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="foto" widget="image" class="oe_avatar"/>
+                        <field name="tarea"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="gestionar_proyectos_emp.accion_ventana_tecnologia">
+            <field name="name">gestionar tecnologia</field>
+            <field name="res_model">gestionar_proyectos_emp.tecno</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Tecnologia" id="gestionar_proyectos_emp.menu_1_lista_tecnologia" parent="gestionar_proyectos_emp.menu_1" action="gestionar_proyectos_emp.accion_ventana_tecnologia"/>
+
+    </data>
+</odoo>
